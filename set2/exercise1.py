@@ -14,17 +14,18 @@ import platform
 
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
+# this will create a list comprising of strings
+some_words = ["what", "does", "this", "line", "do", "?"] #created a list of strings
+# this will start a loop that prints each word in the list
+for word in some_words: 
+    print(word)  #printed what and continued to print each word
 
-some_words = ["what", "does", "this", "line", "do", "?"]
-
-for word in some_words:
-    print(word)
-
-for x in some_words:
+for x in some_words: #does the same as above with a different variable name
     print(x)
-
+# will print entire list
 print(some_words)
 
+#will check the length 
 if len(some_words) > 3:
     print("some_words contains more than 3 words")
 

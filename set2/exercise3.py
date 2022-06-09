@@ -2,6 +2,10 @@
 """Modify each function until the tests pass."""
 
 
+from shutil import move
+from tokenize import group
+
+
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
@@ -13,7 +17,14 @@ def is_odd(a_number):
 
     So if a_number modulo two is zero, then it's even.
     """
-    return None
+    
+    if a_number % 2 == 0:
+        return False
+
+    else:
+        return True
+
+    
 
 
 def fix_it(moves=True, should_move=True):
@@ -31,7 +42,27 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+
+    if should_move == moves:
+        return "No Problem"
+
+
+    if should_move == False and moves:
+
+        return "Duct Tape"
+
+    if should_move and moves == False:
+
+        return "WD-40"
+
+    
+
+
+   
+
+
+    
+       
 
 
 def loops_preview():
@@ -54,7 +85,11 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+
+    star_list = []
+    for i in range(10):
+        star_list.append("*")
+    return star_list
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -67,7 +102,13 @@ def loops_1c(number_of_items=5, symbol="#"):
     Remember that you're being passed arguments here. Don't hard code the number
     or the symbol, let it be whatever it wants to be.
     """
-    return None
+
+    utility_list = []
+
+    for i in range(number_of_items):
+        utility_list.append(symbol)
+    return utility_list
+
 
 
 def loops_2():
@@ -88,6 +129,19 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
+
+    starfield_1 = []
+    starfield_2 = []
+
+    for i in range(10):
+        starfield_1.append("*")
+
+    for i in range(10):
+        starfield_2.append(starfield_1)
+
+    return starfield_2
+    
+    
     return None
 
 
@@ -112,7 +166,31 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+
+    base_list = []
+    full_list = []
+
+    for i in range(10):
+
+        base_list.clear()
+
+        for j in range(10):
+            base_list.append(i)
+
+        full_list.append(base_list)
+            
+            
+        
+
+
+        
+
+    return str(full_list)
+
+
+
+        
+    
 
 
 def loops_4():
