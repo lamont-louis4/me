@@ -179,17 +179,10 @@ def loops_3():
         base_list *= 0
 
         for j in range(10):
-            base_list.append(i)
+            base_list.append(str(i))
 
-        temp = base_list
-
-        full_list.append(str(temp))
+        full_list.append(base_list)
             
-            
-        
-
-
-        
 
     return full_list
 
@@ -222,13 +215,13 @@ def loops_4():
     full_list = []
 
     for i in range(10):
-        base_list.append(f'{i}')
+        base_list.append(str(i))
 
     for i in range(10):
         full_list.append(base_list)
 
         
-    return str(full_list)
+    return full_list
 
 
 def loops_5():
@@ -275,7 +268,7 @@ def loops_5():
         full_list.append(base_list)
         
 
-    return str(full_list)
+    return full_list
 
 
 def loops_6():
@@ -317,7 +310,7 @@ def loops_6():
         counter = counter + 1
 
 
-    return str(full_list)
+    return full_list
 
 
 def loops_7():
@@ -342,10 +335,50 @@ def loops_7():
     lots of diagrams!
     """
 
+    full_list = []
+    base_list = []
 
+    for i in range(9): 
+        
+       if i == 4:
 
+        base_list.append("*")
 
-    return None
+       else:
+
+        base_list.append(" ")
+
+    
+        
+
+    for j in range(5):
+
+        if j == 0:
+           base_list[4] = "*"
+
+        if j == 1:
+            base_list[3] = "*"
+            base_list[5] = "*"
+            
+
+        if j == 2:
+            base_list[2] = "*"
+            base_list[6] = "*"
+            
+
+        if j == 3:
+            base_list[1] = "*"
+            base_list[7] = "*"
+            
+
+        if j == 4:
+            base_list[0] = "*"
+            base_list[8] = "*"
+
+        full_list.append(base_list)
+            
+
+    return full_list
 
 
 def little_printer(some_kind_of_list, exercise_name):
