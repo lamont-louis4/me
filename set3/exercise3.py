@@ -3,6 +3,7 @@
 Steps on the way to making your own guessing game.
 """
 
+from cmath import e
 import random
 
 
@@ -29,6 +30,76 @@ def advancedGuessingGame():
     purpose if you can!
     """
 
+    print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
+
+    lowerbound = input("Enter an lower bound: ")
+
+    happy = True
+
+    while happy == True:
+
+      try:
+       lowerbound = int(lowerbound)
+       happy = False
+       
+      except:
+       lowerbound = input("please give me a number >:(((")
+    
+    upperBound = input("Enter an upper bound: ")
+
+    happy = True
+
+    while happy == True:
+
+      try:
+        upperBound = int(upperBound)
+
+        if upperBound > lowerbound:
+         happy = False
+
+        else:
+          upperBound = input("Please enter a value higher than the lower bound: ")
+
+      except:
+        upperBound = input("please give me a number >:(((")
+       
+    print(f"OK then, a number between {lowerbound} and {upperBound} ?")
+
+    
+    actualNumber = random.randint(lowerbound, upperBound)
+
+    guessed = False
+
+    while not guessed:
+
+      guessedNumber = input("Guess a number: ")
+
+      superhappy = False
+
+      while superhappy == False:
+
+        try:
+          guessedNumber = int(guessedNumber)
+          superhappy = True
+
+        except:
+
+          guessedNumber = input("Please give me a number: ")
+
+        
+      print(f"You guessed {guessedNumber},")
+      if guessedNumber == actualNumber:
+          print(f"You got it!! It was {actualNumber}")
+          guessed = True
+
+      elif guessedNumber > upperBound or guessedNumber < lowerbound:
+        print("Please guess inside the bounds >:(")
+          
+      elif guessedNumber < actualNumber:
+          print("Too small, try again :'(")
+      else:
+          print("Too big, try again :'(")
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 

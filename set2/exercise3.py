@@ -176,7 +176,7 @@ def loops_3():
 
         base_list = []
 
-        base_list *= 0
+        base_list.clear
 
         for j in range(10):
             base_list.append(str(i))
