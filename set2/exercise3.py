@@ -2,7 +2,9 @@
 """Modify each function until the tests pass."""
 
 
+from email.mime import base
 from shutil import move
+from tkinter import Y
 from tokenize import group
 
 
@@ -167,17 +169,21 @@ def loops_3():
          so call str(number) to cast.
     """
 
-    base_list = []
+    
     full_list = []
 
     for i in range(10):
 
-        base_list.clear()
+        base_list = []
+
+        base_list *= 0
 
         for j in range(10):
             base_list.append(i)
 
-        full_list.append(base_list)
+        temp = base_list
+
+        full_list.append(temp)
             
             
         
@@ -210,7 +216,19 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+
+
+    base_list = []
+    full_list = []
+
+    for i in range(10):
+        base_list.append(i)
+
+    for i in range(10):
+        full_list.append(base_list)
+
+        
+    return str(full_list)
 
 
 def loops_5():
@@ -240,7 +258,24 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+
+    
+    full_list = []
+    
+
+    for x in range(10):
+
+        base_list = []
+        base_list.clear()
+
+        for i in range(5):
+          coordinates = f'(i{x}, j{i})'
+          base_list.append(coordinates)
+
+        full_list.append(base_list)
+        
+
+    return str(full_list)
 
 
 def loops_6():
@@ -263,7 +298,26 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+
+
+    counter = 1
+    
+    full_list = []
+
+    for j in range(10):
+
+        base_list = []
+        base_list.clear
+
+        for i in range(counter):
+
+           base_list.append(i)
+
+        full_list.append(base_list)
+        counter = counter + 1
+
+
+    return str(full_list)
 
 
 def loops_7():
