@@ -183,7 +183,7 @@ def loops_3():
 
         temp = base_list
 
-        full_list.append(temp)
+        full_list.append(str(temp))
             
             
         
@@ -191,7 +191,7 @@ def loops_3():
 
         
 
-    return str(full_list)
+    return full_list
 
 
 
@@ -222,7 +222,7 @@ def loops_4():
     full_list = []
 
     for i in range(10):
-        base_list.append(i)
+        base_list.append(f'{i}')
 
     for i in range(10):
         full_list.append(base_list)
@@ -311,7 +311,7 @@ def loops_6():
 
         for i in range(counter):
 
-           base_list.append(i)
+           base_list.append(f'{i}')
 
         full_list.append(base_list)
         counter = counter + 1
@@ -341,6 +341,10 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
+
+
+
+
     return None
 
 
