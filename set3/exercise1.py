@@ -5,6 +5,8 @@ Modify each function until the tests pass.
 """
 
 
+from http.client import OK
+
 def loop_ranger(start, stop=None, step=1):
     """Return a list of numbers between start and stop in steps of step.
 
@@ -17,7 +19,17 @@ def loop_ranger(start, stop=None, step=1):
     Look up for how range() works in the python docs. You could  answer this
     with just the range function, but we'd like you to do it the long way.
     """
-    return None
+
+    num_list = []
+
+    while start < stop:
+
+        num_list.append(start)
+
+        start = start + step
+
+
+    return num_list
 
 
 def two_step_ranger(start, stop):
@@ -28,7 +40,14 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
-    return None
+
+    num_list = []
+
+    for start in range(start, stop, 2):
+
+        num_list.append(start)
+
+    return num_list
 
 
 def stubborn_asker(low, high):
@@ -39,7 +58,15 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
-    return None
+    while True:
+
+      x = int(input())
+
+      if low<x<high:
+       return x
+
+      else:
+       print("Go again >:(")
 
 
 def not_number_rejector(message):
@@ -49,7 +76,21 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+
+    
+
+    while True:
+
+        try:
+            x = int(input(message))
+            return x
+
+        except:
+            print("try again!")
+
+    
+
+    
 
 
 def super_asker(low, high):
@@ -58,7 +99,23 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+
+    while True:
+
+        x = input("HAHAHA")
+        
+        try:
+            x = int(x)
+            if low<x<high:
+                return x
+
+            else:
+                print("gimme the right number")
+
+        except:
+            print("gimme a number")
+
+
 
 
 if __name__ == "__main__":
