@@ -102,7 +102,7 @@ def super_asker(low, high):
 
     while True:
 
-        x = input("HAHAHA")
+        x = input()
         
         try:
             x = int(x)
