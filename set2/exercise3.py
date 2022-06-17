@@ -2,10 +2,13 @@
 """Modify each function until the tests pass."""
 
 
+from copy import deepcopy
 from email.mime import base
 from shutil import move
 from tkinter import Y
 from tokenize import group
+
+from numpy import full_like
 
 
 def is_odd(a_number):
@@ -335,48 +338,39 @@ def loops_7():
     lots of diagrams!
     """
 
+
     full_list = []
+    list_length = 9
     base_list = []
 
-    for i in range(9): 
-        
-       if i == 4:
+    middle = (list_length - 1)/2
+    middle = int(middle)
 
-        base_list.append("*")
-
-       else:
-
+    for i in range(list_length): 
         base_list.append(" ")
 
-    
+        if i == middle:
+           base_list[middle] = "*"
+
+
+    depth = (list_length + 1) / 2
+    depth = int(depth)
+
+    for j in range(depth):
+
+        positive_injector = int(middle+j) 
+        negative_injector = int(middle-j) 
+
+        temp = deepcopy(base_list)
+
+        temp[positive_injector] = "*"
+        temp[negative_injector] = "*"
+
         
+        full_list.append(temp)
 
-    for j in range(5):
+        base_list = temp
 
-        if j == 0:
-           base_list[4] = "*"
-
-        if j == 1:
-            base_list[3] = "*"
-            base_list[5] = "*"
-            
-
-        if j == 2:
-            base_list[2] = "*"
-            base_list[6] = "*"
-            
-
-        if j == 3:
-            base_list[1] = "*"
-            base_list[7] = "*"
-            
-
-        if j == 4:
-            base_list[0] = "*"
-            base_list[8] = "*"
-
-        full_list.append(base_list)
-            
 
     return full_list
 
