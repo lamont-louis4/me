@@ -2,6 +2,7 @@
 """Set 3, Exercise 4."""
 
 import math
+from multiprocessing.sharedctypes import Value
 
 
 def binary_search(low, high, actual_number):
@@ -26,7 +27,29 @@ def binary_search(low, high, actual_number):
 
     # Write your code in here
 
-    return {"guess": guess, "tries": tries}
+    while low <= high:
+
+        
+        guess = (low + high) / 2
+        guess = round(guess)
+        print(guess)
+
+        if guess == actual_number:
+            guess = guess + 1
+            tries = tries + 1
+            return {"guess": guess, "tries": tries}
+
+        elif guess > actual_number:
+            high = guess - 1
+            tries = tries + 1
+
+        else:
+            low = guess + 1
+            tries = tries + 1
+
+    return print("number not found :(((")
+
+    
 
 
 if __name__ == "__main__":
