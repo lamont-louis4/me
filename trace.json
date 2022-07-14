@@ -357,38 +357,38 @@
   },
   {
     "of_total": 15,
-    "mark": 2,
+    "mark": 10,
     "results": [
       {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n (5, 5)"
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n sabal"
       },
       {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n (8, 8)"
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n iotacism"
       },
       {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n (4, 4)"
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n iago"
       },
       {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n (0, None)"
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n None"
       },
       {
-        "value": 0,
-        "name": "exercise 1: get_a_word_of_length_n ('a', None)"
+        "value": 1,
+        "name": "exercise 1: get_a_word_of_length_n None"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 1: list_of_words_with_lengths {word}"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 1: list_of_words_with_lengths {word}"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 1: wordy_pyramid has been refactored"
       },
       {
