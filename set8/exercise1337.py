@@ -296,26 +296,32 @@ def fast_filler(number_of_words=200) -> str:
     """
 
     fname = "dict_cache.json"
-    mode = "w"
     
-
-
+# check if json file containing the dictionary exists at specified location & save dict to variable "myDict"
+# if file does not exist, load data and save to file in specified location
     if os.path.exists(fname):
-        for i in range(number_of_words):
-            with open(fname, "w", encoding="utf-8") as f:
-                myDict = json.load(f)
-                randWord = myDict[random.randint(3,7)]
-        return randWord
-        
+        with open(fname, "r", encoding="utf-8") as f:
+            myDict = json.load(f)
+
     else:
-
         d = make_filler_text_dictionary()
-        out_file = open("dict_cache.json", "w")
-        json.dump(d, fname)
-        
-            
+        outfile = open(fname, "w")
+        json.dump(d, outfile)
 
-    return randWord
+# generate a paragraph of text using random words out of the dictionary.
+    words = []
+
+    for i in range(number_of_words):
+        length = str(random.randint(3, 7))
+        wordchoice = random.randint(0, 3)
+        words.append(myDict[length][wordchoice])
+
+    para = " ".join(words)
+# make the paragraph pretty! (capitalise first letter & add a full-stop)
+    capitalisedPara = para.capitalize()
+    prettyPara = f"{capitalisedPara}."
+
+    return prettyPara
 
 
 if __name__ == "__main__":

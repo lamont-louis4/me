@@ -361,15 +361,15 @@
     "results": [
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n sabal"
+        "name": "exercise 1: get_a_word_of_length_n paauw"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n iotacism"
+        "name": "exercise 1: get_a_word_of_length_n kababish"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n iago"
+        "name": "exercise 1: get_a_word_of_length_n yote"
       },
       {
         "value": 1,
@@ -426,7 +426,7 @@
   "7",
   {
     "of_total": 34,
-    "mark": 30,
+    "mark": 34,
     "results": [
       {
         "value": 1,
@@ -549,20 +549,20 @@
         "name": "\nrandom_filler_text:\n    given:    1000\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [100]\n    expected: True\n    got:      local variable 'randWord' referenced before assignment"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    100\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [10]\n    expected: True\n    got:      '_io.TextIOWrapper' object is not subscriptable"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    10\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [10]\n    expected: True\n    got:      '_io.TextIOWrapper' object is not subscriptable"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    10\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "subsequent fast_filler failed: '_io.TextIOWrapper' object is not subscriptable"
+        "value": 1,
+        "name": "subsequent fast_filler"
       }
     ],
     "week_number": 8
