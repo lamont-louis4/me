@@ -6,6 +6,7 @@ and test them to see if they work.
 You have 2 hours.
 """
 import json
+from operator import contains
 import os
 import random
 import string
@@ -16,45 +17,56 @@ from typing import Dict, List
 
 def give_me_five() -> int:
     """Returns the integer five."""
-    return None
+    five = 5
+    return five
 
 
 def password_please() -> str:
     """Returns a string, 8 or more characters long, contains at
     least one upper case letter and one lowercase letter.
     TIP: don't put in a real password!"""
-    return None
+
+    password = "RealPassword"
+    return password
 
 
 def list_please() -> list:
     """Returns a list, you can put anything in the list."""
-    return None
+    RealList = ["hello", "louis"]
+    return RealList
 
 
 def int_list_please() -> list:
     """Returns a list of integers, any integers are fine."""
-    return None
 
+    intList = [5, 6]
+    return intList
 
 def string_list_please() -> list:
     """Returns a list of strings, any string are fine."""
-    return None
+    stringList = ["hello", "lois"]
+    return stringList
 
 
 def dictionary_please() -> dict:
     """Returns a dictionary, anything you like."""
-    return None
+    FirstDictionary = {"sup" : "bitch", "whats":"up"}
+    return FirstDictionary
 
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = None
+    if some_number is 5:
+        well_is_it = True
+    else:
+        well_is_it = False
     return well_is_it
 
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    return None
+    otherNumber = some_number - 5
+    return otherNumber
 
 
 def greet(name="Towering Timmy") -> str:
@@ -63,7 +75,9 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    return None
+
+    greeting = f"Well hello, {name}"
+    return greeting
 
 
 def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
@@ -71,7 +85,11 @@ def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 2
     """
-    count = None
+    count = 0
+
+    for value in range(len(input_list)):
+        if input_list[value] == 1:
+            count = count + 1
 
     return count
 
@@ -80,9 +98,14 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
+    count = 0
+
+    for value in range(len(input_list)):
+        if input_list[value] == search_for_this:
+            count = count + 1
 
     return count
+
 
 
 def fizz_buzz() -> List:
@@ -104,7 +127,16 @@ def fizz_buzz() -> List:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    # your code here
+    for number in range(1,101):
+        if number %3 == 0 and number %5 ==0:
+            fizz_buzz_list.append("FizzBuzz")
+        elif number %3 == 0:
+            fizz_buzz_list.append("Fizz")
+        elif number %5 == 0:
+            fizz_buzz_list.append("Buzz")
+        else:
+            fizz_buzz_list.append(number)
+        
 
     return fizz_buzz_list
 
@@ -121,7 +153,14 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
 
-    return None
+    shout = list(input_string.upper())
+
+    firey = "🔥".join(shout)
+
+    onfire = "🔥" + firey + "🔥"
+    
+
+    return onfire
 
 
 def pet_filter(letter="a") -> List:
@@ -140,6 +179,11 @@ def pet_filter(letter="a") -> List:
     # fmt: on
     filtered = []
 
+    for i in range(len(pets)):
+        if letter in pets[i]:
+
+            filtered.append(pets[i])
+
     return filtered
 
 
@@ -151,15 +195,23 @@ def best_letter_for_pets() -> str:
     TIP: use the function you just wrote to help you here!
     TIP: you've seen this before in the pokedex.
     """
-    import string
-
+    
     the_alphabet = string.ascii_lowercase
-    most_popular_letter = ""
-
+    most_popular_letter = '0'
+    mx = 0
+    for i in the_alphabet:
+        j = pet_filter(i)
+        if len(j) > mx:
+            mx = len(j)
+            most_popular_letter = str(i)
     return most_popular_letter
 
 
+
 def make_filler_text_dictionary() -> Dict:
+
+    import requests
+
     """Make a dictionary of random words filler text.
     There is a random word generator here:
     https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=4
@@ -184,8 +236,22 @@ def make_filler_text_dictionary() -> Dict:
     TIP: you'll need the requests library
     """
 
-    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
+    
     wd = {}
+    templist = []
+
+    for i in range(3,8):
+
+        for j in range(4):
+
+            url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}"
+
+            r = requests.get(url)
+            word = r.text
+            templist.append(word)
+
+        wd[i] = templist
+        templist = []
 
     return wd
 
@@ -204,6 +270,12 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
 
     words = []
+
+    for i in range(number_of_words):
+        length = random.randint(3, 7)
+        wordchoice = random.randint(0, 3)
+        words.append(my_dict[length][wordchoice])
+
 
     return " ".join(words)
 
@@ -224,8 +296,26 @@ def fast_filler(number_of_words=200) -> str:
     """
 
     fname = "dict_cache.json"
+    mode = "w"
+    
 
-    return None
+
+    if os.path.exists(fname):
+        for i in range(number_of_words):
+            with open(fname, "w", encoding="utf-8") as f:
+                myDict = json.load(f)
+                randWord = myDict[random.randint(3,7)]
+        return randWord
+        
+    else:
+
+        d = make_filler_text_dictionary()
+        out_file = open("dict_cache.json", "w")
+        json.dump(d, fname)
+        
+            
+
+    return randWord
 
 
 if __name__ == "__main__":
