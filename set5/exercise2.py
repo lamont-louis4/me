@@ -24,7 +24,7 @@ def italian_dinner(axiom="tomatoes", guard=6):
     operations.
 
     The most general way of characterising a production system is to see it as
-    a formal language based on symbol manipulation. They habe much in common
+    a formal language based on symbol manipulation. They have much in common
     with formal systems in logic in that:
         1.  they start with an axiom, which is given of the formal system;
         2.  there are a set of statements inthe formal system which can be
@@ -91,6 +91,9 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
+
+    
+
     def apply_rules(letter, guard):
         """Control the substitution.
 
@@ -99,13 +102,23 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         if letter == "a":
-            return "a"
+            return "bba"
         elif letter == "b":
-            return "b"
+            return "aob"
         elif letter == "o":
-            return "o"
+            return "oa"
         else:
             return letter
+
+
+   #parts = source.split(" ")
+    #result = list(map(apply_rules, parts))
+    #new_string = " ".join(result)
+    #guard -= 1
+    #if guard > 0:
+    #    return apply_rules(new_string, guard)
+    #else:
+    #    return new_string
 
     # write the rest of the function here
     pass
