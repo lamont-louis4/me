@@ -102,26 +102,27 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         if letter == "a":
-            return "bba"
+            return "aobaobbba"
         elif letter == "b":
-            return "aob"
+            return "bbaoaaob"
         elif letter == "o":
-            return "oa"
+            return "oabba"
         else:
             return letter
 
 
-   #parts = source.split(" ")
-    #result = list(map(apply_rules, parts))
-    #new_string = " ".join(result)
-    #guard -= 1
-    #if guard > 0:
-    #    return apply_rules(new_string, guard)
-    #else:
-    #    return new_string
+    new_string = ""
+    guard -= 1
+    if guard > -1:
+        for letter in source:
+            l = apply_rules(letter, guard)
+            new_string = new_string + l
+    else:
+        pass
 
-    # write the rest of the function here
-    pass
+    return new_string
+
+    
 
 
 def koch(t, order, size):
@@ -137,6 +138,7 @@ def koch(t, order, size):
         trace += koch(t, order-1, size/3)
         t.left(60)
         trace += koch(t, order-1, size/3)
+        
     return str(order) + trace
 
 
@@ -166,6 +168,18 @@ def square_koch(t, order, size):
     """
     trace = ""
     # write the rest of the function here.
+    if order == 0:          # The base case is just a straight line
+        t.forward(size)
+    else:
+        trace += koch(t, order-1, size/2)   # Go 1/3 of the way
+        t.left(90)
+        trace += koch(t, order-1, size/2)
+        t.right(90)
+        trace += koch(t, order-1, size/2)
+        t.right(90)
+        trace += koch(t, order-1, size/2)
+        t.left(90)
+        trace += koch(t, order-1, size/2)
     return str(order) + trace
     pass
 
